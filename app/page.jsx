@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Tangerine, Ibarra_Real_Nova } from "next/font/google";
+import { Tangerine, Ibarra_Real_Nova } from "next/font/google"
 
-const tangerine = Tangerine({ subsets: ["latin"], weight: ["400", "700"] });
-const ibarraRealNova = Ibarra_Real_Nova({ subsets: ["latin"], weight: ["400", "700"] });
+const tangerine = Tangerine({ subsets: ["latin"], weight: ["400", "700"] })
+const ibarraRealNova = Ibarra_Real_Nova({ subsets: ["latin"], weight: ["400", "700"] })
 
 export default function QuotePage() {
   const [quotes, setQuotes] = useState([])
@@ -22,7 +22,6 @@ export default function QuotePage() {
           }))
         })
         setQuotes(allQuotes)
-        setIndex(Math.floor(Math.random() * allQuotes.length))
       })
   }, [])
 
@@ -31,13 +30,8 @@ export default function QuotePage() {
   }
 
   const quote = quotes[index]
-  const getRandomIndex = () => {
-    let newIndex
-    do {
-      newIndex = Math.floor(Math.random() * quotes.length)
-    } while (newIndex === index)
-    setIndex(newIndex)
-  }
+  const prev = () => setIndex((index - 1 + quotes.length) % quotes.length)
+  const next = () => setIndex((index + 1) % quotes.length)
 
   return (
     <main className="min-h-screen flex flex-col">
@@ -51,7 +45,7 @@ export default function QuotePage() {
 
       <div className="flex justify-center items-center gap-8 py-6">
         <button
-          onClick={getRandomIndex}
+          onClick={prev}
           className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-l-xl"
         >
           <span> </span>
@@ -59,10 +53,9 @@ export default function QuotePage() {
         </button>
 
         <button
-          onClick={getRandomIndex}
+          onClick={next}
           className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-r-xl"
         >
-          <span> </span>
           <ArrowRight className="w-4 h-4" />
           <span> </span>
         </button>
