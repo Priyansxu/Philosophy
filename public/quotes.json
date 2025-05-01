@@ -1,0 +1,760 @@
+{
+  "categories": {
+    "Stoicism": {
+      "description": "Ancient Greek and Roman philosophy focused on virtue, rational thinking, and accepting what we cannot control.",
+      "quotes": [
+        {
+          "author": "Marcus Aurelius",
+          "text": "You have power over your mind - not outside events. Realize this, and you will find strength."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "The happiness of your life depends upon the quality of your thoughts."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "Waste no more time arguing about what a good man should be. Be one."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "If you are distressed by anything external, the pain is not due to the thing itself, but to your estimate of it; and this you have the power to revoke at any moment."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "When you arise in the morning, think of what a precious privilege it is to be alive - to breathe, to think, to enjoy, to love."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "Very little is needed to make a happy life; it is all within yourself, in your way of thinking."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "The object of life is not to be on the side of the majority, but to escape finding oneself in the ranks of the insane."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "Never let the future disturb you. You will meet it, if you have to, with the same weapons of reason which today arm you against the present."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "The soul becomes dyed with the color of its thoughts."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "The best revenge is to be unlike him who performed the injury."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "It is not death that a man should fear, but he should fear never beginning to live."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "How much time he gains who does not look to see what his neighbor says or does or thinks, but only at what he does himself, to make it just and holy."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "Accept the things to which fate binds you, and love the people with whom fate brings you together, but do so with all your heart."
+        },
+        {
+          "author": "Marcus Aurelius",
+          "text": "Do not act as if you were going to live ten thousand years. Death hangs over you. While you live, while it is in your power, be good."
+        },
+        {
+          "author": "Seneca",
+          "text": "We suffer more often in imagination than in reality."
+        },
+        {
+          "author": "Seneca",
+          "text": "Luck is what happens when preparation meets opportunity."
+        },
+        {
+          "author": "Seneca",
+          "text": "It is not that we have a short time to live, but that we waste a lot of it."
+        },
+        {
+          "author": "Seneca",
+          "text": "He who is brave is free."
+        },
+        {
+          "author": "Seneca",
+          "text": "Difficulties strengthen the mind, as labor does the body."
+        },
+        {
+          "author": "Seneca",
+          "text": "The greatest obstacle to living is expectancy, which hangs upon tomorrow and loses today."
+        },
+        {
+          "author": "Seneca",
+          "text": "If a man knows not to which port he sails, no wind is favorable."
+        },
+        {
+          "author": "Seneca",
+          "text": "The time will come when diligent research over long periods will bring to light things which now lie hidden. A single lifetime, even though entirely devoted to the sky, would not be enough for the investigation of so vast a subject."
+        },
+        {
+          "author": "Seneca",
+          "text": "As is a tale, so is life: not how long it is, but how good it is, is what matters."
+        },
+        {
+          "author": "Seneca",
+          "text": "Begin at once to live, and count each separate day as a separate life."
+        },
+        {
+          "author": "Seneca",
+          "text": "Religion is regarded by the common people as true, by the wise as false, and by the rulers as useful."
+        },
+        {
+          "author": "Seneca",
+          "text": "Life is like a play: it's not the length, but the excellence of the acting that matters."
+        },
+        {
+          "author": "Seneca",
+          "text": "Often a very old man has no other proof of his long life than his age."
+        },
+        {
+          "author": "Seneca",
+          "text": "No man was ever wise by chance."
+        },
+        {
+          "author": "Seneca",
+          "text": "If one does not know to which port one is sailing, no wind is favorable."
+        },
+        {
+          "author": "Epictetus",
+          "text": "It's not what happens to you, but how you react to it that matters."
+        },
+        {
+          "author": "Epictetus",
+          "text": "Make the best use of what is in your power, and take the rest as it happens."
+        },
+        {
+          "author": "Epictetus",
+          "text": "First say to yourself what you would be; and then do what you have to do."
+        },
+        {
+          "author": "Epictetus",
+          "text": "Wealth consists not in having great possessions, but in having few wants."
+        },
+        {
+          "author": "Epictetus",
+          "text": "If you want to improve, be content to be thought foolish and stupid."
+        },
+        {
+          "author": "Epictetus",
+          "text": "No man is free who is not master of himself."
+        },
+        {
+          "author": "Epictetus",
+          "text": "Freedom is not procured by a full enjoyment of what is desired, but by controlling the desire."
+        },
+        {
+          "author": "Epictetus",
+          "text": "Don't explain your philosophy. Embody it."
+        },
+        {
+          "author": "Epictetus",
+          "text": "Any person capable of angering you becomes your master; he can anger you only when you permit yourself to be disturbed by him."
+        },
+        {
+          "author": "Epictetus",
+          "text": "He who laughs at himself never runs out of things to laugh at."
+        },
+        {
+          "author": "Epictetus",
+          "text": "The key is to keep company only with people who uplift you, whose presence calls forth your best."
+        },
+        {
+          "author": "Epictetus",
+          "text": "There is only one way to happiness and that is to cease worrying about things which are beyond the power or our will."
+        },
+        {
+          "author": "Epictetus",
+          "text": "If you want to improve, you must be content to be thought foolish and stupid."
+        },
+        {
+          "author": "Epictetus",
+          "text": "He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has."
+        },
+        {
+          "author": "Epictetus",
+          "text": "When you are offended at any man's fault, turn to yourself and study your own failings. Then you will forget your anger."
+        },
+        {
+          "author": "Epictetus",
+          "text": "If someone speaks badly of you, do not defend yourself against the accusations, but reply: 'You obviously don't know about my other vices, otherwise you would have mentioned these as well.'"
+        },
+        {
+          "author": "Epictetus",
+          "text": "Man is not worried by real problems so much as by his imagined anxieties about real problems."
+        },
+        {
+          "author": "Epictetus",
+          "text": "You are a little soul carrying around a corpse."
+        },
+        {
+          "author": "Zeno of Citium",
+          "text": "All things are parts of one single system, which is called Nature; the individual life is good when it is in harmony with Nature."
+        },
+        {
+          "author": "Zeno of Citium",
+          "text": "Well-being is attained by little and little, and nevertheless is no little thing itself."
+        },
+        {
+          "author": "Zeno of Citium",
+          "text": "The goal of life is living in agreement with nature."
+        },
+        {
+          "author": "Zeno of Citium",
+          "text": "Happiness is a good flow of life."
+        },
+        {
+          "author": "Cleanthes",
+          "text": "Lead me, Zeus, and you too, Destiny, wherever you have assigned me to go. I shall follow without hesitation; but even if I become unwilling, having become wicked, I shall follow nonetheless."
+        },
+        {
+          "author": "Cleanthes",
+          "text": "Nothing happens to anybody which he is not fitted by nature to bear."
+        },
+        {
+          "author": "Cleanthes",
+          "text": "He who fears death either fears the loss of sensation or a different kind of sensation. But if you shall have no sensation, neither will you feel any harm; and if you shall acquire another kind of sensation, you will be a different kind of living being and you will not cease to live."
+        },
+        {
+          "author": "Musonius Rufus",
+          "text": "If you accomplish something good with hard work, the labor passes quickly, but the good endures; if you do something shameful in pursuit of pleasure, the pleasure passes quickly, but the shame endures."
+        },
+        {
+          "author": "Musonius Rufus",
+          "text": "We begin to lose our hesitation to do immoral things when we lose our hesitation to speak of them."
+        },
+        {
+          "author": "Musonius Rufus",
+          "text": "Virtue is not simply theoretical knowledge, but it is practical application as well."
+        },
+        {
+          "author": "Cato the Younger",
+          "text": "Consider in silence whatever anyone says: speech both conceals and reveals the inner soul of man."
+        },
+        {
+          "author": "Cato the Younger",
+          "text": "I begin to speak only when I'm certain what I'll say isn't better left unsaid."
+        },
+        {
+          "author": "Panaetius",
+          "text": "Do not believe that any man becomes good by chance even in virtue."
+        }
+      ]
+    },
+    "Mysticism": {
+      "description": "Spiritual tradition focused on direct experience of ultimate reality and the unity of all things.",
+      "quotes": [
+        {
+          "author": "Rumi",
+          "text": "What you seek is seeking you."
+        },
+        {
+          "author": "Rumi",
+          "text": "The wound is the place where the Light enters you."
+        },
+        {
+          "author": "Rumi",
+          "text": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself."
+        },
+        {
+          "author": "Rumi",
+          "text": "Stop acting so small. You are the universe in ecstatic motion."
+        },
+        {
+          "author": "Rumi",
+          "text": "Silence is the language of God, all else is poor translation."
+        },
+        {
+          "author": "Rumi",
+          "text": "Raise your words, not voice. It is rain that grows flowers, not thunder."
+        },
+        {
+          "author": "Rumi",
+          "text": "Let yourself be silently drawn by the strange pull of what you really love. It will not lead you astray."
+        },
+        {
+          "author": "Rumi",
+          "text": "Only from the heart can you touch the sky."
+        },
+        {
+          "author": "Rumi",
+          "text": "Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it."
+        },
+        {
+          "author": "Rumi",
+          "text": "Don't grieve. Anything you lose comes round in another form."
+        },
+        {
+          "author": "Rumi",
+          "text": "Lovers don't finally meet somewhere. They're in each other all along."
+        },
+        {
+          "author": "Rumi",
+          "text": "The minute I heard my first love story, I started looking for you, not knowing how blind that was. Lovers don't finally meet somewhere. They're in each other all along."
+        },
+        {
+          "author": "Rumi",
+          "text": "If you are irritated by every rub, how will your mirror be polished?"
+        },
+        {
+          "author": "Rumi",
+          "text": "These pains you feel are messengers. Listen to them."
+        },
+        {
+          "author": "Rumi",
+          "text": "Everything in the universe is within you. Ask all from yourself."
+        },
+        {
+          "author": "Rumi",
+          "text": "Let the beauty of what you love be what you do."
+        },
+        {
+          "author": "Rumi",
+          "text": "When you do things from your soul, you feel a river moving in you, a joy."
+        },
+        {
+          "author": "Rumi",
+          "text": "Why do you stay in prison when the door is so wide open?"
+        },
+        {
+          "author": "Rumi",
+          "text": "Your heart knows the way. Run in that direction."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "The only way to make sense out of change is to plunge into it, move with it, and join the dance."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "You are an aperture through which the universe is looking at and exploring itself."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "The meaning of life is just to be alive. It is so plain and so obvious and so simple. And yet, everybody rushes around in a great panic as if it were necessary to achieve something beyond themselves."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "We seldom realize, for example, that our most private thoughts and emotions are not actually our own. For we think in terms of languages and images which we did not invent, but which were given to us by our society."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "Trying to define yourself is like trying to bite your own teeth."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "This is the real secret of life -- to be completely engaged with what you are doing in the here and now. And instead of calling it work, realize it is play."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "You don't look out there for God, something in the sky, you look in you."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "The more a thing tends to be permanent, the more it tends to be lifeless."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "No valid plans for the future can be made by those who have no capacity for living now."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "Muddy water is best cleared by leaving it alone."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "To have faith is to trust yourself to the water. When you swim you don't grab hold of the water, because if you do you will sink and drown. Instead you relax, and float."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "Problems that remain persistently insoluble should always be suspected as questions asked in the wrong way."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "The menu is not the meal."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "Reality is only a Rorschach ink-blot, you know."
+        },
+        {
+          "author": "Alan Watts",
+          "text": "You are a function of what the whole universe is doing in the same way that a wave is a function of what the whole ocean is doing."
+        },
+        {
+          "author": "Eckhart Tolle",
+          "text": "Realize deeply that the present moment is all you have. Make the NOW the primary focus of your life."
+        },
+        {
+          "author": "Eckhart Tolle",
+          "text": "The primary cause of unhappiness is never the situation but your thoughts about it."
+        },
+        {
+          "author": "Eckhart Tolle",
+          "text": "Acknowledging the good that you already have in your life is the foundation for all abundance."
+        },
+        {
+          "author": "Eckhart Tolle",
+          "text": "Life will give you whatever experience is most helpful for the evolution of your consciousness."
+        },
+        {
+          "author": "Eckhart Tolle",
+          "text": "Sometimes letting things go is an act of far greater power than defending or hanging on."
+        },
+        {
+          "author": "Lao Tzu",
+          "text": "The journey of a thousand miles begins with one step."
+        },
+        {
+          "author": "Lao Tzu",
+          "text": "Knowing others is wisdom, knowing yourself is Enlightenment."
+        },
+        {
+          "author": "Lao Tzu",
+          "text": "When you are content to be simply yourself and don't compare or compete, everyone will respect you."
+        },
+        {
+          "author": "Lao Tzu",
+          "text": "Nature does not hurry, yet everything is accomplished."
+        },
+        {
+          "author": "Lao Tzu",
+          "text": "A good traveler has no fixed plans and is not intent on arriving."
+        },
+        {
+          "author": "Thich Nhat Hanh",
+          "text": "The present moment is filled with joy and happiness. If you are attentive, you will see it."
+        },
+        {
+          "author": "Thich Nhat Hanh",
+          "text": "Because of your smile, you make life more beautiful."
+        },
+        {
+          "author": "Thich Nhat Hanh",
+          "text": "People have a hard time letting go of their suffering. Out of a fear of the unknown, they prefer suffering that is familiar."
+        },
+        {
+          "author": "Thich Nhat Hanh",
+          "text": "Hope is important because it can make the present moment less difficult to bear. If we believe that tomorrow will be better, we can bear a hardship today."
+        },
+        {
+          "author": "Thich Nhat Hanh",
+          "text": "The seed of suffering in you may be strong, but don't wait until you have no more suffering before allowing yourself to be happy."
+        },
+        {
+          "author": "Jiddu Krishnamurti",
+          "text": "The ability to observe without evaluating is the highest form of intelligence."
+        },
+        {
+          "author": "Jiddu Krishnamurti",
+          "text": "It is truth that liberates, not your effort to be free."
+        },
+        {
+          "author": "Jiddu Krishnamurti",
+          "text": "You must understand the whole of life, not just one little part of it. That is why you must read, that is why you must look at the skies, that is why you must sing, and dance, and write poems, and suffer, and understand, for all that is life."
+        },
+        {
+          "author": "Jiddu Krishnamurti",
+          "text": "Freedom and love go together. Love is not a reaction. If I love you because you love me, that is mere trade, a thing to be bought in the market; it is not love. To love is not to ask anything in return, not even to feel that you are giving something- and it is only such love that can know freedom."
+        },
+        {
+          "author": "Jiddu Krishnamurti",
+          "text": "When you call yourself an Indian or a Muslim or a Christian or a European, or anything else, you are being violent. Do you see why it is violent? Because you are separating yourself from the rest of mankind. When you separate yourself by belief, by nationality, by tradition, it breeds violence. So a man who is seeking to understand violence does not belong to any country, to any religion, to any political party or partial system; he is concerned with the total understanding of mankind."
+        }
+      ]
+    },
+    "Existentialism": {
+      "description": "Philosophy emphasizing individual existence, freedom, and choice, often in an apparently meaningless or absurd world.",
+      "quotes": [
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Existence precedes essence."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Freedom is what you do with what's been done to you."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Hell is other people."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "We are our choices."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Life has no meaning a priori. It is up to you to give it a meaning, and value is nothing but the meaning that you choose."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Man is nothing else but what he makes of himself."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "When the rich wage war, it's the poor who die."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Life begins on the other side of despair."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Better to have beasts that let themselves be killed than men who run away."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "I say a murder is abstract. You pull the trigger and after that you do not understand anything that happens."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Words are loaded pistols."
+        },
+        {
+          "author": "Jean-Paul Sartre",
+          "text": "Like all dreamers, I mistook disenchantment for truth."
+        },
+        {
+          "author": "Friedrich Nietzsche",
+          "text": "He who has a why to live can bear almost any how."
+        },
+        {
+          "author": "Friedrich Nietzsche",
+          "text
+    "Classical Greek": {
+      "description": "Ancient Greek philosophical traditions, particularly from Athens, that laid the foundation for Western philosophy.",
+      "quotes": [
+        {
+          "author": "Plato",
+          "text": "The greatest wealth is to live content with little."
+        },
+        {
+          "author": "Plato",
+          "text": "Be kind, for everyone you meet is fighting a harder battle."
+        },
+        {
+          "author": "Plato",
+          "text": "We can easily forgive a child who is afraid of the dark; the real tragedy of life is when men are afraid of the light."
+        },
+        {
+          "author": "Plato",
+          "text": "The price good men pay for indifference to public affairs is to be ruled by evil men."
+        },
+        {
+          "author": "Plato",
+          "text": "Knowledge which is acquired under compulsion obtains no hold on the mind."
+        },
+        {
+          "author": "Aristotle",
+          "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+        },
+        {
+          "author": "Aristotle",
+          "text": "Happiness depends upon ourselves."
+        },
+        {
+          "author": "Aristotle",
+          "text": "It is the mark of an educated mind to be able to entertain a thought without accepting it."
+        },
+        {
+          "author": "Aristotle",
+          "text": "The whole is greater than the sum of its parts."
+        },
+        {
+          "author": "Aristotle",
+          "text": "Pleasure in the job puts perfection in the work."
+        }
+      ]
+    },
+    "Transcendentalism": {
+      "description": "19th-century American movement emphasizing inherent goodness of people and nature, and the supremacy of insight over logic and experience.",
+      "quotes": [
+        {
+          "author": "Henry David Thoreau",
+          "text": "The price of anything is the amount of life you exchange for it."
+        },
+        {
+          "author": "Henry David Thoreau",
+          "text": "Go confidently in the direction of your dreams. Live the life you have imagined."
+        },
+        {
+          "author": "Henry David Thoreau",
+          "text": "Rather than love, than money, than fame, give me truth."
+        },
+        {
+          "author": "Henry David Thoreau",
+          "text": "How vain it is to sit down to write when you have not stood up to live."
+        },
+        {
+          "author": "Henry David Thoreau",
+          "text": "I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived."
+        },
+        {
+          "author": "Ralph Waldo Emerson",
+          "text": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment."
+        },
+        {
+          "author": "Ralph Waldo Emerson",
+          "text": "What lies behind you and what lies in front of you, pales in comparison to what lies inside of you."
+        },
+        {
+          "author": "Ralph Waldo Emerson",
+          "text": "Do not go where the path may lead, go instead where there is no path and leave a trail."
+        },
+        {
+          "author": "Ralph Waldo Emerson",
+          "text": "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well."
+        },
+        {
+          "author": "Ralph Waldo Emerson",
+          "text": "It is not the length of life, but the depth."
+        },
+        {
+          "author": "Christopher McCandless",
+          "text": "Happiness is only real when shared."
+        },
+        {
+          "author": "Christopher McCandless",
+          "text": "The very basic core of a man's living spirit is his passion for adventure."
+        },
+        {
+          "author": "Christopher McCandless",
+          "text": "The sea's only gifts are harsh blows and, occasionally, the chance to feel strong. Now, I don't know much about the sea, but I do know that that's the way it is here. And I also know how important it is in life not necessarily to be strong but to feel strong, to measure yourself at least once, to find yourself at least once in the most ancient of human conditions, facing blind, deaf stone alone, with nothing to help you but your own hands and your own head."
+        }
+      ]
+    },
+    "Rationalism": {
+      "description": "Philosophical position that reason is the primary source of knowledge, emphasizing deduction and innate ideas rather than sensory experience.",
+      "quotes": [
+        {
+          "author": "René Descartes",
+          "text": "I think, therefore I am."
+        },
+        {
+          "author": "René Descartes",
+          "text": "It is not enough to have a good mind; the main thing is to use it well."
+        },
+        {
+          "author": "René Descartes",
+          "text": "If you would be a real seeker after truth, it is necessary that at least once in your life you doubt, as far as possible, all things."
+        },
+        {
+          "author": "René Descartes",
+          "text": "The reading of all good books is like conversation with the finest men of past centuries."
+        },
+        {
+          "author": "René Descartes",
+          "text": "Divide each difficulty into as many parts as is feasible and necessary to resolve it."
+        },
+        {
+          "author": "Baruch Spinoza",
+          "text": "The more you struggle to live, the less you live. Give up the notion that you must be sure of what you are doing. Instead, surrender to what is real within you, for that alone is sure."
+        },
+        {
+          "author": "Baruch Spinoza",
+          "text": "I have striven not to laugh at human actions, not to weep at them, nor to hate them, but to understand them."
+        },
+        {
+          "author": "Baruch Spinoza",
+          "text": "The highest activity a human being can attain is learning for understanding, because to understand is to be free."
+        },
+        {
+          "author": "Baruch Spinoza",
+          "text": "Peace is not an absence of war, it is a virtue, a state of mind, a disposition for benevolence, confidence, justice."
+        },
+        {
+          "author": "Baruch Spinoza",
+          "text": "Do not weep; do not wax indignant. Understand."
+        },
+        {
+          "author": "Gottfried Wilhelm Leibniz",
+          "text": "Why is there something rather than nothing?"
+        },
+        {
+          "author": "Gottfried Wilhelm Leibniz",
+          "text": "We live in the best of all possible worlds."
+        },
+        {
+          "author": "Gottfried Wilhelm Leibniz",
+          "text": "Music is the pleasure the human mind experiences from counting without being aware that it is counting."
+        },
+        {
+          "author": "Gottfried Wilhelm Leibniz",
+          "text": "To love is to place our happiness in the happiness of another."
+        }
+      ]
+    },
+    "Empiricism": {
+      "description": "Philosophical approach emphasizing knowledge coming primarily from sensory experience and evidence.",
+      "quotes": [
+        {
+          "author": "John Locke",
+          "text": "The only fence against the world is a thorough knowledge of it."
+        },
+        {
+          "author": "John Locke",
+          "text": "I have always thought the actions of men the best interpreters of their thoughts."
+        },
+        {
+          "author": "John Locke",
+          "text": "Reading furnishes the mind only with materials of knowledge; it is thinking that makes what we read ours."
+        },
+        {
+          "author": "John Locke",
+          "text": "New opinions are always suspected, and usually opposed, without any other reason but because they are not already common."
+        },
+        {
+          "author": "John Locke",
+          "text": "We are like chameleons, we take our hue and the color of our moral character, from those who are around us."
+        },
+        {
+          "author": "George Berkeley",
+          "text": "To be is to be perceived."
+        },
+        {
+          "author": "George Berkeley",
+          "text": "All the choir of heaven and furniture of earth - in a word, all those bodies which compose the frame of the world - have not any subsistence without a mind."
+        },
+        {
+          "author": "George Berkeley",
+          "text": "Truth is the cry of all, but the game of few."
+        },
+        {
+          "author": "George Berkeley",
+          "text": "That neither our thoughts, nor passions, nor ideas formed by the imagination, exist without the mind, is what everybody will allow."
+        },
+        {
+          "author": "David Hume",
+          "text": "The truth springs from arguments amongst friends."
+        },
+        {
+          "author": "David Hume",
+          "text": "Beauty is no quality in things themselves: It exists merely in the mind which contemplates them."
+        },
+        {
+          "author": "David Hume",
+          "text": "Custom is the great guide of human life."
+        },
+        {
+          "author": "David Hume",
+          "text": "A wise man proportions his belief to the evidence."
+        },
+        {
+          "author": "David Hume",
+          "text": "Reason is, and ought only to be the slave of the passions, and can never pretend to any other office than to serve and obey them."
+        }
+      ]
+    }
+  }
+}
