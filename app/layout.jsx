@@ -1,9 +1,8 @@
 import React from "react";
-import { Inter, Tangerine } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-const tangerine = Tangerine({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
   title: "PhiloQuotes",
