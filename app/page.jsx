@@ -51,14 +51,14 @@ export default function QuotePage() {
           className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Random</span>
+          <span> </span>
         </button>
 
         <button
           onClick={getRandomIndex}
           className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors"
         >
-          <span>Random</span>
+          <span> </span>
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>
