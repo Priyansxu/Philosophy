@@ -9,7 +9,7 @@ const ibarraRealNova = Ibarra_Real_Nova({ subsets: ["latin"], weight: ["400", "7
 
 export default function QuotePage() {
   const [quotes, setQuotes] = useState([])
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(null)
 
   useEffect(() => {
     fetch("/quotes.json")
@@ -22,10 +22,13 @@ export default function QuotePage() {
           }))
         })
         setQuotes(allQuotes)
+      
+        const randomIndex = Math.floor(Math.random() * allQuotes.length)
+        setIndex(randomIndex)
       })
   }, [])
 
-  if (!quotes.length) {
+  if (!quotes.length || index === null) {
     return <div className="p-12 text-center">Take a breath...</div>
   }
 
