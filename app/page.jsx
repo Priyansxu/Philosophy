@@ -44,7 +44,7 @@ export default function QuotePage() {
       <div className="flex-grow flex items-center justify-center p-4">
         <div className="max-w-2xl w-full text-center px-4 space-y-4">
           <p className={`text-xl md:text-3xl font-medium ${ibarraRealNova.className}`}>"{quote.text}"</p>
-          <p className={`text-2xl font-semibold text-gray-800 ${tangerine.className}`}>- {quote.author}</p>
+          <p className={`text-[22px] font-semibold text-gray-800 ${tangerine.className}`}>- {quote.author}</p>
           <p className="text-sm text-gray-500">{quote.category}</p>
         </div>
       </div>
