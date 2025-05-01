@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
           <div className="container mx-auto px-4">
             <div className="flex h-16 items-center justify-center">
               <h1 className="text-xl font-bold tracking-tight">
-                <span className="text-black">Philo</span>
-                <span className="text-gray-500">Quotes</span>
+                <span className="text-black">Philosophy</span>
+                <span className="text-gray-500">""</span>
               </h1>
             </div>
           </div>
