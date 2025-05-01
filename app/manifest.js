@@ -11,7 +11,7 @@ export default function manifest() {
       {
         src: '/icon.svg',
         sizes: 'any',
-        type: 'image/svg',
+        type: 'image/svg+xml',
       },
     ],
   }
