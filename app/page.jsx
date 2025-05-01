@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Tangerine } from "next/font/google";
+import { Tangerine, Ibarra_Real_Nova } from "next/font/google";
 
 const tangerine = Tangerine({ subsets: ["latin"], weight: ["400", "700"] });
+const ibarraRealNova = Ibarra_Real_Nova({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function QuotePage() {
   const [quotes, setQuotes] = useState([])
@@ -42,8 +43,8 @@ export default function QuotePage() {
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow flex items-center justify-center p-4">
         <div className="max-w-2xl w-full text-center px-4 space-y-4">
-          <p className={`text-3xl md:text-5xl font-medium ${tangerine.className}`}>"{quote.text}"</p>
-          <p className="text-base font-semibold text-gray-800">— {quote.author}</p>
+          <p className={`text-3xl md:text-5xl font-medium ${ibarraRealNova.className}`}>"{quote.text}"</p>
+          <p className={`text-xl font-semibold text-gray-800 ${tangerine.className}`}>- {quote.author}</p>
           <p className="text-sm text-gray-500">{quote.category}</p>
         </div>
       </div>
