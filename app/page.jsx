@@ -52,18 +52,19 @@ export default function QuotePage() {
       <div className="flex justify-center items-center gap-8 py-6">
         <button
           onClick={getRandomIndex}
-          className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-l"
+          className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-l-xl"
         >
-          <ArrowLeft className="w-4 h-4" />
           <span> </span>
+          <ArrowLeft className="w-4 h-4" />
         </button>
 
         <button
           onClick={getRandomIndex}
-          className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-r"
+          className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-r-xl"
         >
           <span> </span>
           <ArrowRight className="w-4 h-4" />
+          <span> </span>
         </button>
       </div>
     </main>
