@@ -39,7 +39,7 @@ export default function QuotePage() {
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow flex items-center justify-center p-4">
         <div className="max-w-2xl w-full text-center px-4 space-y-4">
-          <p className="text-xl md:text-2xl font-medium">"{quote.text}"</p>
+          <p className="text-xl md:text-2xl font-medium ${tangerine.className}">"{quote.text}"</p>
           <p className="text-base font-semibold text-gray-800">— {quote.author}</p>
           <p className="text-sm text-gray-500">{quote.category}</p>
         </div>
@@ -48,7 +48,7 @@ export default function QuotePage() {
       <div className="flex justify-center items-center gap-8 py-6">
         <button
           onClick={getRandomIndex}
-          className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors"
+          className="flex items-center gap-2 px-5 py-2 border border-[2px] border-gray-300 hover:bg-gray-100 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span> </span>
@@ -56,7 +56,7 @@ export default function QuotePage() {
 
         <button
           onClick={getRandomIndex}
-          className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors"
+          className="flex items-center gap-2 px-5 py-2 border border-[2px] border-gray-300 hover:bg-gray-100 transition-colors"
         >
           <span> </span>
           <ArrowRight className="w-4 h-4" />
