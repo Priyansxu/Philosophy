@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
+import { Tangerine } from "next/font/google";
+
+const tangerine = Tangerine({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function QuotePage() {
   const [quotes, setQuotes] = useState([])
