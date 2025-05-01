@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <header className="border-b border-gray-200 bg-white">
           <div className="container mx-auto px-4">
             <div className="flex h-16 items-center justify-center">
-              <h1 className="text-lg font-bold tracking-tight">
+              <h1 className="text-xl font-bold tracking-tight">
                 <span className="text-black">Philosophy</span>
                 <span className="text-gray-500"> ""</span>
               </h1>
