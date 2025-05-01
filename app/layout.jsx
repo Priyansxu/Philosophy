@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
-  title: "Philosophy """,
-  description: "Explore philosophical quotes from the greatest thinkers throughout history",
+  title: 'Philosophy ""',
+  description: 'Explore philosophical quotes from the greatest thinkers throughout history',
 };
 
 export default function RootLayout({ children }) {
