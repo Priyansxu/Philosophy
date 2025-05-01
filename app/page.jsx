@@ -45,7 +45,7 @@ export default function QuotePage() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-8 py-12">
+      <div className="flex justify-center items-center gap-8 py-6">
         <button
           onClick={getRandomIndex}
           className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors"
