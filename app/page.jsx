@@ -39,7 +39,7 @@ export default function QuotePage() {
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow flex items-center justify-center p-4">
         <div className="max-w-2xl w-full text-center px-4 space-y-4">
-          <p className="text-xl md:text-2xl font-medium ${tangerine.className}">"{quote.text}"</p>
+          <p className={`text-xl md:text-2xl font-medium ${tangerine.className}`}>"{quote.text}"</p>
           <p className="text-base font-semibold text-gray-800">— {quote.author}</p>
           <p className="text-sm text-gray-500">{quote.category}</p>
         </div>
