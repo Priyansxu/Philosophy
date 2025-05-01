@@ -51,16 +51,14 @@ export default function QuotePage() {
           onClick={prev}
           className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-l-xl"
         >
-          <span> </span>
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4 mr-2" />
         </button>
 
         <button
           onClick={next}
           className="flex items-center gap-2 px-5 py-2 border border-gray-300 hover:bg-gray-100 transition-colors rounded-r-xl"
         >
-          <ArrowRight className="w-4 h-4" />
-          <span> </span>
+          <ArrowRight className="w-4 h-4 ml-2" />
         </button>
       </div>
     </main>
