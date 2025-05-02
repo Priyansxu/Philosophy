@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react"
+import { ArrowLeft, ArrowRight, Loader2, Lightbulb } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Tangerine, Ibarra_Real_Nova } from "next/font/google"
 
 const tangerine = Tangerine({ subsets: ["latin"], weight: ["400", "700"] })
@@ -25,7 +26,6 @@ export default function QuotePage() {
           }))
         })
         setQuotes(allQuotes)
-
         const randomIndex = Math.floor(Math.random() * allQuotes.length)
         setIndex(randomIndex)
       })
@@ -86,35 +86,46 @@ export default function QuotePage() {
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow flex items-center justify-center p-4">
         <div className="max-w-2xl w-full text-center px-4 space-y-4">
-          <p className={`text-xl md:text-3xl font-medium ${ibarraRealNova.className}`}>"{quote.text}"</p>
-          <p className={`text-2xl md:text-3xl font-semibold text-gray-800 ${tangerine.className}`}>- {quote.author}</p>
-          <p className="text-sm text-gray-500">{quote.category}</p>
+          <p className={`text-lg md:text-2xl font-medium ${ibarraRealNova.className}`}>"{quote.text}"</p>
+          <p className={`text-xl md:text-2xl font-semibold text-gray-800 ${tangerine.className}`}>- {quote.author}</p>
+          <p className="text-xs text-gray-500">{quote.category}</p>
 
-          <div className="mt-8">
+          <div className="mt-6">
             <button
               onClick={explainQuote}
               disabled={isExplaining}
-              className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400"
+              className="px-4 py-1.5 text-sm bg-warmGray-100 text-gray-800 rounded-md border border-warmGray-300 hover:bg-warmGray-200 transition-colors disabled:opacity-50 inline-flex items-center gap-2"
             >
               {isExplaining ? (
-                <span className="flex items-center">
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
                   Explaining...
-                </span>
-              ) : explanation ? (
-                showExplanation ? "Hide Explanation" : "Show Explanation"
+                </>
               ) : (
-                "Explain this quote"
+                <>
+                  {explanation
+                    ? showExplanation ? "Hide Explanation" : "Show Explanation"
+                    : "Explain this quote"}
+                  <Lightbulb className="w-4 h-4" />
+                </>
               )}
             </button>
           </div>
 
-          {showExplanation && explanation && (
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg text-left">
-              <h3 className="font-medium text-lg mb-2">Explanation:</h3>
-              <p className="text-gray-700">{explanation}</p>
-            </div>
-          )}
+          <AnimatePresence>
+            {showExplanation && explanation && (
+              <motion.div
+                className="mt-5 p-4 bg-gray-50 rounded-md text-left"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className="font-medium text-sm mb-1">Explanation:</h3>
+                <p className="text-sm text-gray-700">{explanation}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
