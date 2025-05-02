@@ -49,7 +49,7 @@ export default function QuotePage() {
     setExplanation("")
     
     try {
-      const response = await fetch("/api/explaination", {
+      const response = await fetch("/api/explanation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
