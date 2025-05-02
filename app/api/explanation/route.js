@@ -31,7 +31,7 @@ export async function POST(request) {
       contents: prompt,
       config: {
         systemInstruction: "You are a thoughtful philosopher and educator who helps people understand the deeper meaning behind quotes and wisdom.",
-        temperature: 0.7,
+        temperature: 0.2,
       },
     });
     
