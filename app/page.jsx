@@ -12,6 +12,7 @@ export default function QuotePage() {
   const [index, setIndex] = useState(null)
   const [explanation, setExplanation] = useState("")
   const [isExplaining, setIsExplaining] = useState(false)
+  const [showExplanation, setShowExplanation] = useState(false)
 
   useEffect(() => {
     fetch("/quotes.json")
@@ -35,19 +36,29 @@ export default function QuotePage() {
   }
 
   const quote = quotes[index]
+
   const prev = () => {
     setIndex((index - 1 + quotes.length) % quotes.length)
     setExplanation("")
+    setShowExplanation(false)
   }
+
   const next = () => {
     setIndex((index + 1) % quotes.length)
     setExplanation("")
+    setShowExplanation(false)
   }
 
   const explainQuote = async () => {
+    if (explanation) {
+      setShowExplanation(prev => !prev)
+      return
+    }
+
     setIsExplaining(true)
     setExplanation("")
-    
+    setShowExplanation(true)
+
     try {
       const response = await fetch("/api/explanation", {
         method: "POST",
@@ -57,10 +68,10 @@ export default function QuotePage() {
         body: JSON.stringify({
           quote: quote.text,
           author: quote.author,
-          category: quote.category
+          category: quote.category,
         }),
       })
-      
+
       const data = await response.json()
       setExplanation(data.explanation)
     } catch (error) {
@@ -78,7 +89,7 @@ export default function QuotePage() {
           <p className={`text-xl md:text-3xl font-medium ${ibarraRealNova.className}`}>"{quote.text}"</p>
           <p className={`text-2xl md:text-3xl font-semibold text-gray-800 ${tangerine.className}`}>- {quote.author}</p>
           <p className="text-sm text-gray-500">{quote.category}</p>
-          
+
           <div className="mt-8">
             <button
               onClick={explainQuote}
@@ -90,13 +101,15 @@ export default function QuotePage() {
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                   Explaining...
                 </span>
+              ) : explanation ? (
+                showExplanation ? "Hide Explanation" : "Show Explanation"
               ) : (
                 "Explain this quote"
               )}
             </button>
           </div>
-          
-          {explanation && (
+
+          {showExplanation && explanation && (
             <div className="mt-6 p-4 bg-gray-50 rounded-lg text-left">
               <h3 className="font-medium text-lg mb-2">Explanation:</h3>
               <p className="text-gray-700">{explanation}</p>
