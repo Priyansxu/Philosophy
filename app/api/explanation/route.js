@@ -21,7 +21,7 @@ export async function POST(request) {
       
       Category: ${category}
       
-      Explain the meaning, context, and significance of this quote in about 3-4 sentences.
+      Explain the meaning, context, and significance of this quote in about 3-4 sentences in brief, use common words.
       Your explanation should be insightful, accessible, and help the reader understand 
       the deeper meaning behind the quote.
     `;
