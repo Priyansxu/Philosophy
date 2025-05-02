@@ -16,6 +16,7 @@
     "lucide-react": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
+    "framer-motion": "latest",
     "@google/genai": "latest"
   }
 }
