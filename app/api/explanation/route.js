@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
 
-const ai = new GoogleGenAI({ apiKey: "GEMINI_API_KEY" });
+const ai = new GoogleGenAI({ apiKey: "AIzaSyAqBA0HbhbfvjjrDnmjnzrdQfjpRiSTiZk" });
 
 export async function POST(request) {
   try {
