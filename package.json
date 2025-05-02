@@ -15,6 +15,7 @@
     "tailwindcss": "3.4.1",
     "lucide-react": "latest",
     "autoprefixer": "latest",
-    "postcss": "latest"
+    "postcss": "latest",
+    "@google/genai": "latest"
   }
 }
