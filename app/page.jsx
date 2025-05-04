@@ -276,7 +276,7 @@ export default function QuotePage() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className={`border-b ${darkMode ? "border-gray-700 bg-gray-800" : "border-gray-200 bg-white"} overflow-hidden`}
+            className={`border-b ${darkMode ? "border-slate-700 bg-slate-800" : "border-gray-200 bg-white"} overflow-hidden`}
           >
             <div className="p-3 flex items-center gap-3">
               <Search className="w-5 h-5 text-gray-500" />
@@ -285,7 +285,7 @@ export default function QuotePage() {
                 placeholder="Search by keyword or author..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className={`flex-grow outline-none ${darkMode ? "bg-gray-800 text-gray-100" : "bg-white text-gray-800"}`}
+                className={`flex-grow outline-none ${darkMode ? "bg-slate-800 text-gray-100" : "bg-white text-gray-800"}`}
               />
               {searchQuery && (
                 <button onClick={() => setSearchQuery("")}>
@@ -309,8 +309,8 @@ export default function QuotePage() {
               transition={{ duration: 0.4 }}
             >
               <p className={`text-lg md:text-2xl font-medium ${ibarraRealNova.className} ${darkMode ? "text-gray-100" : "text-gray-800"}`}>"{quote.text}"</p>
-              <p className={`text-xl md:text-2xl font-semibold ${tangerine.className} ${darkMode ? "text-gray-300" : "text-gray-800"}`}>- {quote.author}</p>
-              <p className={`text-xs ${darkMode ? "text-gray-400" : "text-gray-500"}`}>{quote.category}</p>
+              <p className={`text-xl md:text-2xl font-semibold ${tangerine.className} ${darkMode ? "text-indigo-300" : "text-gray-800"}`}>- {quote.author}</p>
+              <p className={`text-xs ${darkMode ? "text-indigo-200" : "text-gray-500"}`}>{quote.category}</p>
             </motion.div>
           </AnimatePresence>
 
@@ -319,7 +319,7 @@ export default function QuotePage() {
             <button
               onClick={explainQuote}
               disabled={isExplaining}
-              className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-gray-800 border-gray-700 hover:bg-gray-700" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}
+              className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-slate-800 border-slate-700 hover:bg-slate-700 text-gray-100" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}
             >
               {isExplaining ? (
                 <>
@@ -340,19 +340,19 @@ export default function QuotePage() {
               onClick={toggleFavorite}
               className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${
                 isFavorite() 
-                  ? "bg-pink-100 border-pink-300 text-pink-700 hover:bg-pink-200" 
+                  ? "bg-indigo-100 border-indigo-300 text-indigo-700 hover:bg-indigo-200" 
                   : darkMode 
-                    ? "bg-gray-800 border-gray-700 hover:bg-gray-700" 
+                    ? "bg-slate-800 border-slate-700 hover:bg-slate-700 text-gray-100" 
                     : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"
               } ${darkMode && !isFavorite() ? "text-gray-100" : ""}`}
             >
-              <Heart className={`w-4 h-4 ${isFavorite() ? "fill-pink-500 text-pink-500" : ""}`} />
+              <Heart className={`w-4 h-4 ${isFavorite() ? "fill-indigo-500 text-indigo-500" : ""}`} />
               {isFavorite() ? "Favorited" : "Add to Favorites"}
             </button>
             
             <button
               onClick={shareQuote}
-              className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-gray-800 border-gray-700 hover:bg-gray-700 text-gray-100" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}
+              className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-slate-800 border-slate-700 hover:bg-slate-700 text-gray-100" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}
             >
               <Share2 className="w-4 h-4" />
               Share
@@ -365,14 +365,14 @@ export default function QuotePage() {
               {showExplanation && explanation && (
                 <motion.div
                   key="explanation"
-                  className={`mt-5 p-4 rounded-md text-left ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}
+                  className={`mt-5 p-4 rounded-md text-left ${darkMode ? "bg-slate-800" : "bg-gray-50"}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.3 }}
                 >
                   <h3 className="font-medium text-sm mb-1">Explanation:</h3>
-                  <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-700"}`}>{explanation}</p>
+                  <p className={`text-sm ${darkMode ? "text-indigo-200" : "text-gray-700"}`}>{explanation}</p>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -388,7 +388,7 @@ export default function QuotePage() {
           onClick={prev}
           className={`flex items-center gap-2 px-5 py-2 border rounded-l-xl transition-colors ${
             darkMode 
-              ? "border-gray-700 bg-gray-800/70 hover:bg-gray-700" 
+              ? "border-slate-700 bg-slate-800/70 hover:bg-slate-700" 
               : "border-gray-300 bg-white/70 hover:bg-gray-100"
           } backdrop-blur-xl`}
         >
@@ -399,7 +399,7 @@ export default function QuotePage() {
           onClick={next}
           className={`flex items-center gap-2 px-5 py-2 border rounded-r-xl transition-colors ${
             darkMode 
-              ? "border-gray-700 bg-gray-800/70 hover:bg-gray-700" 
+              ? "border-slate-700 bg-slate-800/70 hover:bg-slate-700" 
               : "border-gray-300 bg-white/70 hover:bg-gray-100"
           } backdrop-blur-xl`}
         >
