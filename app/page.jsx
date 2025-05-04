@@ -43,7 +43,12 @@ export default function QuotePage() {
     fetch("/quotes.json")
       .then(res => res.json())
       .then(data => {
-        const categoryList = ["All", ...Object.keys(data.categories)]
+        // Load favorites from local storage first
+        const savedFavorites = localStorage.getItem("favorites")
+        const favList = savedFavorites ? JSON.parse(savedFavorites) : []
+        setFavorites(favList)
+        
+        const categoryList = ["All", "Favorites", ...Object.keys(data.categories)]
         setCategories(categoryList)
         
         const allQuotesData = Object.entries(data.categories).flatMap(([categoryName, category]) => {
@@ -57,12 +62,6 @@ export default function QuotePage() {
         setQuotes(allQuotesData)
         const randomIndex = Math.floor(Math.random() * allQuotesData.length)
         setIndex(randomIndex)
-        
-        // Load favorites from local storage
-        const savedFavorites = localStorage.getItem("favorites")
-        if (savedFavorites) {
-          setFavorites(JSON.parse(savedFavorites))
-        }
         
         // Load dark mode preference from local storage
         const savedDarkMode = localStorage.getItem("darkMode") === "true"
@@ -101,7 +100,12 @@ export default function QuotePage() {
       )
     }
     
-    if (selectedCategory !== "All") {
+    if (selectedCategory === "Favorites") {
+      filtered = filtered.filter(quote => {
+        const quoteId = `${quote.author}-${quote.text.substring(0, 20)}`
+        return favorites.includes(quoteId)
+      })
+    } else if (selectedCategory !== "All") {
       filtered = filtered.filter(quote => quote.category === selectedCategory)
     }
     
@@ -111,7 +115,7 @@ export default function QuotePage() {
     } else {
       setIndex(null)
     }
-  }, [searchQuery, selectedCategory, allQuotes])
+  }, [searchQuery, selectedCategory, allQuotes, favorites])
 
   if (!quotes.length || index === null) {
     return (
@@ -213,13 +217,13 @@ export default function QuotePage() {
   // Author info feature removed
 
   return (
-    <main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-gray-900 text-gray-100" : "bg-white text-gray-800"}`}>
+    <main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-slate-900 text-gray-100" : "bg-white text-gray-800"}`}>
       {/* Header with search and dark mode */}
-      <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-gray-800" : "bg-white"} border-b ${darkMode ? "border-gray-700" : "border-gray-200"}`}>
+      <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-slate-800 border-slate-700" : "bg-white border-gray-200"} border-b transition-colors duration-300`}>
         <div className="flex items-center gap-2">
           <button 
             onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
-            className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 ${darkMode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-100 hover:bg-gray-200"}`}
+            className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 ${darkMode ? "bg-slate-700 hover:bg-slate-600" : "bg-gray-100 hover:bg-gray-200"}`}
           >
             <BookOpen className="w-4 h-4" />
             {selectedCategory}
@@ -228,7 +232,7 @@ export default function QuotePage() {
           
           {showCategoryDropdown && (
             <div 
-              className={`absolute top-14 left-4 z-10 mt-1 rounded-md shadow-lg ${darkMode ? "bg-gray-800 border border-gray-700" : "bg-white border border-gray-200"}`}
+              className={`absolute top-14 left-4 z-10 mt-1 rounded-md shadow-lg ${darkMode ? "bg-slate-800 border border-slate-700" : "bg-white border border-gray-200"}`}
             >
               <div className="py-1">
                 {categories.map(category => (
@@ -238,7 +242,7 @@ export default function QuotePage() {
                       setSelectedCategory(category)
                       setShowCategoryDropdown(false)
                     }}
-                    className={`block px-4 py-2 text-sm w-full text-left ${selectedCategory === category ? (darkMode ? "bg-gray-700" : "bg-gray-100") : ""} ${darkMode ? "hover:bg-gray-700" : "hover:bg-gray-100"}`}
+                    className={`block px-4 py-2 text-sm w-full text-left ${selectedCategory === category ? (darkMode ? "bg-slate-700" : "bg-gray-100") : ""} ${darkMode ? "hover:bg-slate-700" : "hover:bg-gray-100"}`}
                   >
                     {category}
                   </button>
