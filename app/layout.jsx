@@ -6,12 +6,12 @@ const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
-  title: 'Philosophy Quotes | Timeless Wisdom',
+  title: 'Philosophy Quotes',
   description: 'Discover timeless philosophy quotes from Socrates, Plato, Nietzsche, and other great thinkers. Curated for deep thinkers and lovers of wisdom.',
   keywords: 'philosophy quotes, wisdom, socrates, plato, nietzsche, stoicism, deep quotes, ancient philosophy, thinkers, inspirational quotes',
   metadataBase: new URL("https://philosophy.zone.id"),
   openGraph: {
-    title: 'Philosophy Quotes | Timeless Wisdom',
+    title: 'Philosophy Quotes',
     description: 'Discover timeless philosophy quotes from Socrates, Plato, Nietzsche, and more.',
     url: 'https://philosophy.zone.id',
     siteName: 'Philosophy Quotes',
@@ -28,7 +28,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Philosophy Quotes | Timeless Wisdom',
-    description: 'Discover timeless philosophy quotes from history's greatest minds.',
+    description: 'Discover timeless philosophy quotes from history&aposs greatest minds.',
     images: ['https://philosophy.zone.id/icon.svg'],
   },
   alternates: {
