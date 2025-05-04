@@ -38,7 +38,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth dark:bg-slate-700">
       <body className={`${montserrat.className} transition-colors duration-300`}>
         <header className="border-b transition-colors duration-300 dark:border-slate-700 border-gray-200 dark:bg-slate-800 bg-white">
           <div className="container mx-auto px-4">
