@@ -366,7 +366,7 @@ export default function QuotePage() {
 
             <button  
               onClick={shareQuote}  
-              className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
+              className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-300" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
             >  
               <Share2 className="w-4 h-4" />  
               Share  
