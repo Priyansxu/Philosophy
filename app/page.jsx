@@ -57,10 +57,23 @@ const categoryList = ["All", "Saved", ...Object.keys(data.categories)]
       }))  
     })  
 
-    setAllQuotes(allQuotesData)  
-    setQuotes(allQuotesData)  
-    const randomIndex = Math.floor(Math.random() * allQuotesData.length)  
-    setIndex(randomIndex)  
+    setAllQuotes(allQuotesData)
+    setQuotes(allQuotesData)
+    
+    // Get last index from localStorage or use a random one
+    const lastIndex = localStorage.getItem("lastQuoteIndex")
+    if (lastIndex && !isNaN(Number(lastIndex))) {
+      // Use a different index each time by adding a random offset
+      const newIndex = (Number(lastIndex) + Math.floor(Math.random() * 10) + 1) % allQuotesData.length
+      setIndex(newIndex)
+      // Store the new index
+      localStorage.setItem("lastQuoteIndex", newIndex.toString())
+    } else {
+      // First time - use a random index
+      const randomIndex = Math.floor(Math.random() * allQuotesData.length)
+      setIndex(randomIndex)
+      localStorage.setItem("lastQuoteIndex", randomIndex.toString())
+    }
 
     // Load dark mode preference from local storage  
     const savedDarkMode = localStorage.getItem("darkMode") === "true"  
@@ -114,8 +127,14 @@ if (selectedCategory === "Saved") {
 }  
 
 setQuotes(filtered)  
-if (filtered.length > 0) {  
-  setIndex(0)  
+// Only reset index to 0 if there are quotes to show and we're not in the middle of a save/unsave action
+if (filtered.length > 0) {
+  // Preserve the current index if possible
+  if (index !== null && index < filtered.length) {
+    // Keep current index
+  } else {
+    setIndex(0)  
+  }
 } else {  
   setIndex(null)  
 }
@@ -126,7 +145,7 @@ if (!quotes.length || index === null) {
   return (
     <div className={`p-12 text-center min-h-screen flex items-center justify-center ${darkMode ? "dark:bg-black dark:text-neutral-200" : ""}`}>
       <div>
-        {quotes.length === 0 ? (
+        {allQuotes.length === 0 ? (
           <>
             <Loader2 className="animate-spin mx-auto mb-4 w-8 h-8" />
             <p>Take a breath... Loading quotes.</p>
@@ -148,12 +167,16 @@ const prev = () => {
 setIndex((index - 1 + quotes.length) % quotes.length)
 setExplanation("")
 setShowExplanation(false)
+// Store current index
+localStorage.setItem("lastQuoteIndex", ((index - 1 + quotes.length) % quotes.length).toString())
 }
 
 const next = () => {
 setIndex((index + 1) % quotes.length)
 setExplanation("")
 setShowExplanation(false)
+// Store current index
+localStorage.setItem("lastQuoteIndex", ((index + 1) % quotes.length).toString())
 }
 
 // Explanation API call
@@ -199,6 +222,7 @@ setSaved(saved.filter(id => id !== quoteId))
 } else {
 setSaved([...saved, quoteId])
 }
+// Don't change quotes or index when saving/unsaving
 }
 
 // Check if current quote is saved
