@@ -356,9 +356,9 @@ export default function QuotePage() {
                 isSaved()   
                   ? "bg-amber-100 border-amber-300 text-amber-700 hover:bg-amber-200"   
                   : darkMode   
-                    ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-200"   
+                    ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-300"   
                     : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"  
-              } ${darkMode && !isSaved() ? "text-neutral-200" : ""}`}  
+              } ${darkMode && !isSaved() ? "text-neutral-300" : ""}`}  
             >  
               <Heart className={`w-4 h-4 ${isSaved() ? "fill-amber-500 text-amber-500" : ""}`} />  
               {isSaved() ? "Saved" : "Save"}  
@@ -375,7 +375,7 @@ export default function QuotePage() {
             <button  
               onClick={explainQuote}  
               disabled={isExplaining}  
-              className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
+              className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-300" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
             >  
               {isExplaining ? (  
                 <>  
