@@ -29,7 +29,7 @@ const [index, setIndex] = useState(null)
 const [explanation, setExplanation] = useState("")
 const [isExplaining, setIsExplaining] = useState(false)
 const [showExplanation, setShowExplanation] = useState(false)
-const [favorites, setFavorites] = useState([])
+const [saved, setSaved] = useState([])
 const [darkMode, setDarkMode] = useState(false)
 const [searchQuery, setSearchQuery] = useState("")
 const [showSearch, setShowSearch] = useState(false)
@@ -42,12 +42,12 @@ useEffect(() => {
 fetch("/quotes.json")
 .then(res => res.json())
 .then(data => {
-// Load favorites from local storage first
-const savedFavorites = localStorage.getItem("favorites")
-const favList = savedFavorites ? JSON.parse(savedFavorites) : []
-setFavorites(favList)
+// Load saved quotes from local storage first
+const savedQuotes = localStorage.getItem("savedQuotes")
+const savedList = savedQuotes ? JSON.parse(savedQuotes) : []
+setSaved(savedList)
 
-const categoryList = ["All", "Favorites", ...Object.keys(data.categories)]  
+const categoryList = ["All", "Saved", ...Object.keys(data.categories)]  
     setCategories(categoryList)  
 
     const allQuotesData = Object.entries(data.categories).flatMap(([categoryName, category]) => {  
@@ -72,12 +72,12 @@ const categoryList = ["All", "Favorites", ...Object.keys(data.categories)]
 
 }, [])
 
-// Save favorites to local storage when they change
+// Save quotes to local storage when they change
 useEffect(() => {
-if (favorites.length > 0) {
-localStorage.setItem("favorites", JSON.stringify(favorites))
+if (saved.length > 0) {
+localStorage.setItem("savedQuotes", JSON.stringify(saved))
 }
-}, [favorites])
+}, [saved])
 
 // Toggle dark mode and save to local storage
 useEffect(() => {
@@ -100,10 +100,10 @@ if (searchQuery) {
   )  
 }  
 
-if (selectedCategory === "Favorites") {  
+if (selectedCategory === "Saved") {  
   filtered = filtered.filter(quote => {  
     const quoteId = `${quote.author}-${quote.text.substring(0, 20)}`  
-    return favorites.includes(quoteId)  
+    return saved.includes(quoteId)  
   })  
 } else if (selectedCategory !== "All") {  
   filtered = filtered.filter(quote => quote.category === selectedCategory)  
@@ -116,7 +116,7 @@ if (filtered.length > 0) {
   setIndex(null)  
 }
 
-}, [searchQuery, selectedCategory, allQuotes, favorites])
+}, [searchQuery, selectedCategory, allQuotes, saved])
 
 if (!quotes.length || index === null) {
 return (
@@ -179,20 +179,20 @@ try {
 
 }
 
-// Toggle favorite status
-const toggleFavorite = () => {
+// Toggle save status
+const toggleSave = () => {
 const quoteId = `${quote.author}-${quote.text.substring(0, 20)}`
-if (favorites.includes(quoteId)) {
-setFavorites(favorites.filter(id => id !== quoteId))
+if (saved.includes(quoteId)) {
+setSaved(saved.filter(id => id !== quoteId))
 } else {
-setFavorites([...favorites, quoteId])
+setSaved([...saved, quoteId])
 }
 }
 
-// Check if current quote is favorited
-const isFavorite = () => {
+// Check if current quote is saved
+const isSaved = () => {
 const quoteId = `${quote.author}-${quote.text.substring(0, 20)}`
-return favorites.includes(quoteId)
+return saved.includes(quoteId)
 }
 
 // Share quote function
@@ -338,17 +338,17 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
         </button>  
 
         <button  
-          onClick={toggleFavorite}  
+          onClick={toggleSave}  
           className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${  
-            isFavorite()   
+            isSaved()   
               ? "bg-amber-100 border-amber-300 text-amber-700 hover:bg-amber-200"   
               : darkMode   
                 ? "bg-gray-900 border-gray-800 hover:bg-gray-800 text-gray-200"   
                 : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"  
-          } ${darkMode && !isFavorite() ? "text-gray-200" : ""}`}  
+          } ${darkMode && !isSaved() ? "text-gray-200" : ""}`}  
         >  
-          <Heart className={`w-4 h-4 ${isFavorite() ? "fill-amber-500 text-amber-500" : ""}`} />  
-          {isFavorite() ? "Favorited" : "Add to Favorites"}  
+          <Heart className={`w-4 h-4 ${isSaved() ? "fill-amber-500 text-amber-500" : ""}`} />  
+          {isSaved() ? "Saved" : "Save"}  
         </button>  
 
         <button  
