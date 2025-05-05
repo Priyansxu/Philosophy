@@ -119,14 +119,22 @@ if (filtered.length > 0) {
 }, [searchQuery, selectedCategory, allQuotes, saved])
 
 if (!quotes.length || index === null) {
-return (
-<div className={`p-12 text-center min-h-screen flex items-center justify-center ${darkMode ? "dark:bg-black dark:text-gray-200" : ""}`}>
-<div>
-<Loader2 className="animate-spin mx-auto mb-4 w-8 h-8" />
-<p>Take a breath... {quotes.length === 0 ? "Loading quotes." : "No quotes match your search."}</p>
-</div>
-</div>
-)
+  return (
+    <div className={`p-12 text-center min-h-screen flex items-center justify-center ${darkMode ? "dark:bg-black dark:text-gray-200" : ""}`}>
+      <div>
+        {quotes.length === 0 ? (
+          <>
+            <Loader2 className="animate-spin mx-auto mb-4 w-8 h-8" />
+            <p>Take a breath... Loading quotes.</p>
+          </>
+        ) : selectedCategory === "Saved" && saved.length === 0 ? (
+          <p>No saved quotes yet. Save quotes you like by clicking the heart icon.</p>
+        ) : (
+          <p>No quotes match your search.</p>
+        )}
+      </div>
+    </div>
+  )
 }
 
 const quote = quotes[index]
@@ -220,11 +228,11 @@ if (navigator.share) {
 return (
 <main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-black text-gray-200" : "bg-white text-gray-800"}`}>
 {/* Header with search and dark mode */}
-<header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black border-gray-800" : "bg-white border-gray-200"} border-b transition-colors duration-300`}>
+<header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black border-zinc-800" : "bg-white border-zinc-200"} border-b transition-colors duration-300`}>
 <div className="flex items-center gap-2">
 <button
 onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
-className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 ${darkMode ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-100 hover:bg-gray-200"}`}
+className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 ${darkMode ? "bg-neutral-900 hover:bg-neutral-800" : "bg-neutral-100 hover:bg-neutral-200"}`}
 >
 <BookOpen className="w-4 h-4" />
 {selectedCategory}
@@ -233,7 +241,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
 
 {showCategoryDropdown && (  
         <div   
-          className={`absolute top-14 left-4 z-10 mt-1 rounded-md shadow-lg ${darkMode ? "bg-black border border-gray-800" : "bg-white border border-gray-200"}`}  
+          className={`absolute top-14 left-4 z-10 mt-1 rounded-md shadow-lg ${darkMode ? "bg-black border border-zinc-800" : "bg-white border border-zinc-200"}`}  
         >  
           <div className="py-1">  
             {categories.map(category => (  
@@ -243,7 +251,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
                   setSelectedCategory(category)  
                   setShowCategoryDropdown(false)  
                 }}  
-                className={`block px-4 py-2 text-sm w-full text-left ${selectedCategory === category ? (darkMode ? "bg-gray-900" : "bg-gray-100") : ""} ${darkMode ? "hover:bg-gray-900" : "hover:bg-gray-100"}`}  
+                className={`block px-4 py-2 text-sm w-full text-left ${selectedCategory === category ? (darkMode ? "bg-neutral-900" : "bg-neutral-100") : ""} ${darkMode ? "hover:bg-neutral-900" : "hover:bg-neutral-100"}`}  
               >  
                 {category}  
               </button>  
@@ -256,14 +264,14 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
     <div className="flex items-center gap-2">  
       <button  
         onClick={() => setShowSearch(!showSearch)}  
-        className={`p-2 rounded-full ${darkMode ? "hover:bg-gray-900" : "hover:bg-gray-100"}`}  
+        className={`p-2 rounded-full ${darkMode ? "hover:bg-neutral-900" : "hover:bg-neutral-100"}`}  
       >  
         <Search className="w-5 h-5" />  
       </button>  
 
       <button  
         onClick={() => setDarkMode(!darkMode)}  
-        className={`p-2 rounded-full ${darkMode ? "hover:bg-gray-900" : "hover:bg-gray-100"}`}  
+        className={`p-2 rounded-full ${darkMode ? "hover:bg-neutral-900" : "hover:bg-neutral-100"}`}  
       >  
         {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}  
       </button>  
@@ -277,7 +285,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
         initial={{ height: 0, opacity: 0 }}  
         animate={{ height: "auto", opacity: 1 }}  
         exit={{ height: 0, opacity: 0 }}  
-        className={`border-b ${darkMode ? "border-gray-800 bg-black" : "border-gray-200 bg-white"} overflow-hidden`}  
+        className={`border-b ${darkMode ? "border-zinc-800 bg-black" : "border-zinc-200 bg-white"} overflow-hidden`}  
       >  
         <div className="p-3 flex items-center gap-3">  
           <Search className="w-5 h-5 text-gray-500" />  
@@ -323,8 +331,8 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
             isSaved()   
               ? "bg-amber-100 border-amber-300 text-amber-700 hover:bg-amber-200"   
               : darkMode   
-                ? "bg-gray-900 border-gray-800 hover:bg-gray-800 text-gray-200"   
-                : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"  
+                ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-gray-200"   
+                : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"  
           } ${darkMode && !isSaved() ? "text-gray-200" : ""}`}  
         >  
           <Heart className={`w-4 h-4 ${isSaved() ? "fill-amber-500 text-amber-500" : ""}`} />  
@@ -333,7 +341,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
 
         <button  
           onClick={shareQuote}  
-          className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-gray-900 border-gray-800 hover:bg-gray-800 text-gray-200" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}  
+          className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-gray-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
         >  
           <Share2 className="w-4 h-4" />  
           Share  
@@ -342,7 +350,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
         <button  
           onClick={explainQuote}  
           disabled={isExplaining}  
-          className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-gray-900 border-gray-800 hover:bg-gray-800 text-gray-200" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}  
+          className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-gray-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
         >  
           {isExplaining ? (  
             <>  
@@ -366,7 +374,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
           {showExplanation && explanation && (  
             <motion.div  
               key="explanation"  
-              className={`mt-5 p-4 rounded-md text-left ${darkMode ? "bg-gray-900" : "bg-gray-50"}`}  
+              className={`mt-5 p-4 rounded-md text-left ${darkMode ? "bg-neutral-900" : "bg-neutral-50"}`}  
               initial={{ opacity: 0, y: 10 }}  
               animate={{ opacity: 1, y: 0 }}  
               exit={{ opacity: 0, y: 10 }}  
@@ -387,8 +395,8 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
       onClick={prev}  
       className={`flex items-center gap-2 px-5 py-2 border rounded-l-xl transition-colors ${  
         darkMode   
-          ? "border-gray-800 bg-black/70 hover:bg-gray-900"   
-          : "border-gray-300 bg-white/70 hover:bg-gray-100"  
+          ? "border-zinc-800 bg-black/70 hover:bg-neutral-900"   
+          : "border-zinc-300 bg-white/70 hover:bg-neutral-100"  
       } backdrop-blur-xl`}  
     >  
       <ArrowLeft className="w-4 h-4 mr-2" />  
@@ -398,8 +406,8 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
       onClick={next}  
       className={`flex items-center gap-2 px-5 py-2 border rounded-r-xl transition-colors ${  
         darkMode   
-          ? "border-gray-800 bg-black/70 hover:bg-gray-900"   
-          : "border-gray-300 bg-white/70 hover:bg-gray-100"  
+          ? "border-zinc-800 bg-black/70 hover:bg-neutral-900"   
+          : "border-zinc-300 bg-white/70 hover:bg-neutral-100"  
       } backdrop-blur-xl`}  
     >  
       <ArrowRight className="w-4 h-4 ml-2" />  
