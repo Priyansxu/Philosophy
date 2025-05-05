@@ -88,6 +88,11 @@ document.documentElement.classList.remove("dark")
 }
 }, [darkMode])
 
+// Helper function to generate consistent quote IDs
+const getQuoteId = (quote) => {
+  return `${quote.author}-${quote.text.substring(0, 20)}`
+}
+
 // Filter quotes based on search query and category
 useEffect(() => {
 let filtered = [...allQuotes]
@@ -101,7 +106,7 @@ if (searchQuery) {
 
 if (selectedCategory === "Saved") {  
   filtered = filtered.filter(quote => {  
-    const quoteId = `${quote.author}-${quote.text.substring(0, 20)}`  
+    const quoteId = getQuoteId(quote)  
     return saved.includes(quoteId)  
   })  
 } else if (selectedCategory !== "All") {  
@@ -188,7 +193,7 @@ try {
 
 // Toggle save status
 const toggleSave = () => {
-const quoteId = `${quote.author}-${quote.text.substring(0, 20)}`
+const quoteId = getQuoteId(quote)
 if (saved.includes(quoteId)) {
 setSaved(saved.filter(id => id !== quoteId))
 } else {
@@ -198,7 +203,7 @@ setSaved([...saved, quoteId])
 
 // Check if current quote is saved
 const isSaved = () => {
-const quoteId = `${quote.author}-${quote.text.substring(0, 20)}`
+const quoteId = getQuoteId(quote)
 return saved.includes(quoteId)
 }
 
