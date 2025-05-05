@@ -260,8 +260,8 @@ export default function QuotePage() {
    <>
       <Head>
         <title>Philosophy Quotes</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <meta name="description" content="Discover timeless philosophy quotes from Socrates, Plato, Nietzsche, and other great thinkers. Curated for deep thinkers and lovers of wisdom." />
+        <meta name="keywords" content="philosophy quotes, wisdom, socrates, plato, nietzsche, stoicism, deep quotes, ancient philosophy, thinkers, inspirational quotes" />
         <meta name="theme-color" content="#080808" />
         <link rel="icon" href="/icon.svg" />
       </Head>
