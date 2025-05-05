@@ -141,11 +141,11 @@ export default function QuotePage() {
               <p>Take a breath... Loading quotes.</p>
             </>
           ) : selectedCategory === "Saved" && saved.length === 0 ? (
-            <div className="space-y-4">
+            <div className="space-y-4 text-sm">
               <p>No saved quotes yet. Save quotes you like by clicking the heart icon.</p>
               <button 
                 onClick={goToHomePage}
-                className={`px-4 py-2 rounded-md inline-flex items-center gap-2 ${
+                className={`px-4 py-2 rounded-md inline-flex items-center gap-2 border-zinc-300 ${
                   darkMode ? "bg-neutral-800 hover:bg-neutral-700" : "bg-neutral-200 hover:bg-neutral-300"
                 }`}
               >
@@ -154,11 +154,11 @@ export default function QuotePage() {
               </button>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-4 text-sm">
               <p>No quotes match your search.</p>
               <button 
                 onClick={goToHomePage}
-                className={`px-4 py-2 rounded-md inline-flex items-center gap-2 ${
+                className={`px-4 py-2 rounded-md inline-flex items-center gap-2 border-zinc-300 ${
                   darkMode ? "bg-neutral-800 hover:bg-neutral-700" : "bg-neutral-200 hover:bg-neutral-300"
                 }`}
               >
@@ -343,8 +343,8 @@ export default function QuotePage() {
               exit={{ opacity: 0, y: -20 }}  
               transition={{ duration: 0.4 }}  
             >  
-              <p className={`text-lg md:text-2xl font-medium ${ibarraRealNova.className} ${darkMode ? "text-neutral-200" : "text-gray-800"}`}>"{quote.text}"</p>  
-              <p className={`text-xl md:text-2xl font-semibold ${tangerine.className} ${darkMode ? "text-neutral-300" : "text-gray-800"}`}>- {quote.author}</p>  
+              <p className={`text-lg md:text-2xl font-medium ${ibarraRealNova.className} ${darkMode ? "text-neutral-100" : "text-neutral-800"}`}>"{quote.text}"</p>  
+              <p className={`text-xl md:text-2xl font-semibold ${tangerine.className} ${darkMode ? "text-neutral-200" : "text-neutral-800"}`}>- {quote.author}</p>  
               <p className={`text-xs ${darkMode ? "text-neutral-400" : "text-gray-500"}`}>{quote.category}</p>  
             </motion.div>  
           </AnimatePresence>  
