@@ -74,9 +74,8 @@ const categoryList = ["All", "Saved", ...Object.keys(data.categories)]
 
 // Save quotes to local storage when they change
 useEffect(() => {
-if (saved.length > 0) {
+// Always update localStorage, even when empty
 localStorage.setItem("savedQuotes", JSON.stringify(saved))
-}
 }, [saved])
 
 // Toggle dark mode and save to local storage
@@ -120,7 +119,7 @@ if (filtered.length > 0) {
 
 if (!quotes.length || index === null) {
   return (
-    <div className={`p-12 text-center min-h-screen flex items-center justify-center ${darkMode ? "dark:bg-black dark:text-gray-200" : ""}`}>
+    <div className={`p-12 text-center min-h-screen flex items-center justify-center ${darkMode ? "dark:bg-black dark:text-neutral-200" : ""}`}>
       <div>
         {quotes.length === 0 ? (
           <>
@@ -226,7 +225,7 @@ if (navigator.share) {
 }
 
 return (
-<main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-black text-gray-200" : "bg-white text-gray-800"}`}>
+<main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-black text-neutral-200" : "bg-white text-gray-800"}`}>
 {/* Header with search and dark mode */}
 <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black border-zinc-800" : "bg-white border-zinc-200"} border-b transition-colors duration-300`}>
 <div className="flex items-center gap-2">
@@ -294,11 +293,11 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
             placeholder="Search by keyword or author..."  
             value={searchQuery}  
             onChange={(e) => setSearchQuery(e.target.value)}  
-            className={`flex-grow outline-none ${darkMode ? "bg-black text-gray-200" : "bg-white text-gray-800"}`}  
+            className={`flex-grow outline-none ${darkMode ? "bg-black text-neutral-200" : "bg-white text-gray-800"}`}  
           />  
           {searchQuery && (  
             <button onClick={() => setSearchQuery("")}>  
-              <X className={`w-5 h-5 ${darkMode ? "text-gray-500 hover:text-gray-300" : "text-gray-500 hover:text-gray-700"}`} />  
+              <X className={`w-5 h-5 ${darkMode ? "text-neutral-500 hover:text-neutral-300" : "text-gray-500 hover:text-gray-700"}`} />  
             </button>  
           )}  
         </div>  
@@ -317,9 +316,9 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
           exit={{ opacity: 0, y: -20 }}  
           transition={{ duration: 0.4 }}  
         >  
-          <p className={`text-lg md:text-2xl font-medium ${ibarraRealNova.className} ${darkMode ? "text-gray-200" : "text-gray-800"}`}>"{quote.text}"</p>  
-          <p className={`text-xl md:text-2xl font-semibold ${tangerine.className} ${darkMode ? "text-gray-300" : "text-gray-800"}`}>- {quote.author}</p>  
-          <p className={`text-xs ${darkMode ? "text-gray-400" : "text-gray-500"}`}>{quote.category}</p>  
+          <p className={`text-lg md:text-2xl font-medium ${ibarraRealNova.className} ${darkMode ? "text-neutral-200" : "text-gray-800"}`}>"{quote.text}"</p>  
+          <p className={`text-xl md:text-2xl font-semibold ${tangerine.className} ${darkMode ? "text-neutral-300" : "text-gray-800"}`}>- {quote.author}</p>  
+          <p className={`text-xs ${darkMode ? "text-neutral-400" : "text-gray-500"}`}>{quote.category}</p>  
         </motion.div>  
       </AnimatePresence>  
 
@@ -331,9 +330,9 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
             isSaved()   
               ? "bg-amber-100 border-amber-300 text-amber-700 hover:bg-amber-200"   
               : darkMode   
-                ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-gray-200"   
+                ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-200"   
                 : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"  
-          } ${darkMode && !isSaved() ? "text-gray-200" : ""}`}  
+          } ${darkMode && !isSaved() ? "text-neutral-200" : ""}`}  
         >  
           <Heart className={`w-4 h-4 ${isSaved() ? "fill-amber-500 text-amber-500" : ""}`} />  
           {isSaved() ? "Saved" : "Save"}  
@@ -341,7 +340,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
 
         <button  
           onClick={shareQuote}  
-          className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-gray-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
+          className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
         >  
           <Share2 className="w-4 h-4" />  
           Share  
@@ -350,7 +349,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
         <button  
           onClick={explainQuote}  
           disabled={isExplaining}  
-          className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-gray-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
+          className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-200" : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"}`}  
         >  
           {isExplaining ? (  
             <>  
@@ -381,7 +380,7 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
               transition={{ duration: 0.3 }}  
             >  
               <h3 className="font-medium text-sm mb-1">Explanation:</h3>  
-              <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-700"}`}>{explanation}</p>  
+              <p className={`text-sm ${darkMode ? "text-neutral-300" : "text-gray-700"}`}>{explanation}</p>  
             </motion.div>  
           )}  
         </AnimatePresence>  
