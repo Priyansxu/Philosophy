@@ -318,26 +318,6 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
       {/* Action buttons */}  
       <div className="mt-6 flex justify-center gap-2 flex-wrap">  
         <button  
-          onClick={explainQuote}  
-          disabled={isExplaining}  
-          className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-gray-900 border-gray-800 hover:bg-gray-800 text-gray-200" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}  
-        >  
-          {isExplaining ? (  
-            <>  
-              <Loader2 className="w-4 h-4 animate-spin" />  
-              Explaining...  
-            </>  
-          ) : (  
-            <>  
-              {explanation  
-                ? showExplanation ? "Hide Explanation" : "Show Explanation"  
-                : "Explain this quote"}  
-              <Lightbulb className="w-4 h-4" />  
-            </>  
-          )}  
-        </button>  
-
-        <button  
           onClick={toggleSave}  
           className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${  
             isSaved()   
@@ -357,6 +337,26 @@ className={`px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 $
         >  
           <Share2 className="w-4 h-4" />  
           Share  
+        </button>  
+
+        <button  
+          onClick={explainQuote}  
+          disabled={isExplaining}  
+          className={`px-4 py-1.5 text-sm rounded-md border transition-colors disabled:opacity-50 inline-flex items-center gap-2 ${darkMode ? "bg-gray-900 border-gray-800 hover:bg-gray-800 text-gray-200" : "bg-warmGray-100 border-warmGray-300 hover:bg-warmGray-200"}`}  
+        >  
+          {isExplaining ? (  
+            <>  
+              <Loader2 className="w-4 h-4 animate-spin" />  
+              Explaining...  
+            </>  
+          ) : (  
+            <>  
+              {explanation  
+                ? showExplanation ? "Hide Explanation" : "Show Explanation"  
+                : "Explain this quote"}  
+              <Lightbulb className="w-4 h-4" />  
+            </>  
+          )}  
         </button>  
       </div>  
 
