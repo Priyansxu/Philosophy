@@ -1,5 +1,7 @@
 "use client"
 
+
+import Head from "next/head";
 import { useEffect, useState, useRef } from "react"
 import { ArrowLeft, ArrowRight, Loader2, Lightbulb, Heart, Search, Share2, X, Moon, Sun, BookOpen, ChevronDown, Home } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -254,7 +256,16 @@ export default function QuotePage() {
     }
   }
 
-  return (
+  return ( 
+   <>
+      <Head>
+        <title>Philosophy Quotes</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="theme-color" content="#080808" />
+        <link rel="icon" href="/icon.svg" />
+      </Head>
+
     <main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-black text-neutral-200" : "bg-white text-gray-800"}`}>
       <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black border-zinc-800" : "bg-white border-zinc-200"} border-b transition-colors duration-300`}>
         <div className="flex items-center gap-2" ref={dropdownRef}>
@@ -437,5 +448,6 @@ export default function QuotePage() {
         </button>  
       </div>  
     </main>
+   </>
   )
 }
