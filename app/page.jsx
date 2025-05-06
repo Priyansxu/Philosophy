@@ -293,7 +293,7 @@ export default function QuotePage() {
       </Head>
 
     <main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-black text-neutral-200" : "bg-white text-gray-800"}`}>
-      <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black" : "bg-white"} transition-colors duration-300`}>
+      <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black border-zinc-800" : "bg-white border-zinc-200"} border-b transition-colors duration-300`}>
         <div className="flex items-center gap-2" ref={dropdownRef}>
           <button
             onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
