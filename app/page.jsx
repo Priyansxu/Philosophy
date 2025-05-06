@@ -485,13 +485,13 @@ export default function QuotePage() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-8 py-6 fixed bottom-2 w-full mt-4">
+      <div className="flex justify-center items-center gap-8 py-6 fixed bottom-1 w-full">
         <button
           onClick={prev}
           className={`flex items-center gap-2 px-5 py-2 border rounded-l-xl transition-colors ${
             darkMode
-              ? "border-zinc-800 bg-black/70 hover:bg-neutral-900"
-              : "border-zinc-300 bg-white/70 hover:bg-neutral-100"
+              ? "border-zinc-800 bg-black/60 hover:bg-neutral-900"
+              : "border-zinc-300 bg-white/60 hover:bg-neutral-100"
           } backdrop-blur-xl`}
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -501,9 +501,9 @@ export default function QuotePage() {
           onClick={next}
           className={`flex items-center gap-2 px-5 py-2 border rounded-r-xl transition-colors ${
             darkMode
-              ? "border-zinc-800 bg-black/70 hover:bg-neutral-900"
-              : "border-zinc-300 bg-white/70 hover:bg-neutral-100"
-          } backdrop-blur-xl`}
+              ? "border-zinc-800 bg-black/60 hover:bg-neutral-900"
+              : "border-zinc-300 bg-white/60 hover:bg-neutral-100"
+          } backdrop-blur-md`}
         >
           <ArrowRight className="w-4 h-4 ml-2" />
         </button>
