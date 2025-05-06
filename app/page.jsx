@@ -503,7 +503,7 @@ export default function QuotePage() {
             darkMode
               ? "border-zinc-800 bg-black/60 hover:bg-neutral-900"
               : "border-zinc-300 bg-white/60 hover:bg-neutral-100"
-          } backdrop-blur-md`}
+          } backdrop-blur-sm`}
         >
           <ArrowRight className="w-4 h-4 ml-2" />
         </button>
