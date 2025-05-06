@@ -13,6 +13,7 @@ export default function QuotePage() {
   const [quotes, setQuotes] = useState([])
   const [allQuotes, setAllQuotes] = useState([])
   const [index, setIndex] = useState(null)
+  const [previousIndices, setPreviousIndices] = useState([]) // Store previous indices for navigation
   const [explanation, setExplanation] = useState("")
   const [isExplaining, setIsExplaining] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
@@ -53,18 +54,20 @@ export default function QuotePage() {
         })
 
         setAllQuotes(allQuotesData)
-        
+
         // Set initial quotes but wait for filters to be applied
         setQuotes(allQuotesData)
 
         const lastIndex = localStorage.getItem("lastQuoteIndex")
         if (lastIndex && !isNaN(Number(lastIndex))) {
-          const newIndex = (Number(lastIndex) + Math.floor(Math.random() * 10) + 1) % allQuotesData.length
+          const newIndex = Number(lastIndex)
           setIndex(newIndex)
+          setPreviousIndices([newIndex]) // Initialize previous indices with current index
           localStorage.setItem("lastQuoteIndex", newIndex.toString())
         } else {
           const randomIndex = Math.floor(Math.random() * allQuotesData.length)
           setIndex(randomIndex)
+          setPreviousIndices([randomIndex]) // Initialize previous indices with current index
           localStorage.setItem("lastQuoteIndex", randomIndex.toString())
         }
 
@@ -77,6 +80,7 @@ export default function QuotePage() {
       localStorage.setItem("savedQuotes", JSON.stringify(saved))
     }
   }, [saved, isLoaded])
+  
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem("darkMode", darkMode)
@@ -87,9 +91,6 @@ export default function QuotePage() {
       }
     }
   }, [darkMode, isLoaded])
-
-
-
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -107,7 +108,6 @@ export default function QuotePage() {
   const getQuoteId = (quote) => {
     return `${quote.author}-${quote.text.substring(0, 20)}`
   }
-
 
   useEffect(() => {
     if (!isLoaded || allQuotes.length === 0) return;
@@ -135,17 +135,22 @@ export default function QuotePage() {
       if (index !== null && index < filtered.length) {
         // Keep current index
       } else {
-        setIndex(0)
+        const newIndex = 0
+        setIndex(newIndex)
+        setPreviousIndices([newIndex]) // Reset previous indices with new index
       }
     } else {
       setIndex(null)
+      setPreviousIndices([]) // Reset previous indices when no quotes available
     }
   }, [searchQuery, selectedCategory, allQuotes, saved, isLoaded, index])
 
   const goToHomePage = () => {
     setSelectedCategory("All")
     setSearchQuery("")
-    setIndex(0)
+    const randomIndex = Math.floor(Math.random() * allQuotes.length)
+    setIndex(randomIndex)
+    setPreviousIndices([randomIndex]) // Reset previous indices with new random index
   }
 
   if (!isLoaded) {
@@ -203,17 +208,47 @@ export default function QuotePage() {
   const quote = quotes[index]
 
   const prev = () => {
-    setIndex((index - 1 + quotes.length) % quotes.length)
+    // Get the previous index from our history
+    if (previousIndices.length > 1) {
+      const newPreviousIndices = [...previousIndices]
+      newPreviousIndices.pop() // Remove current index
+      const prevIndex = newPreviousIndices[newPreviousIndices.length - 1]
+      setIndex(prevIndex)
+      setPreviousIndices(newPreviousIndices)
+      localStorage.setItem("lastQuoteIndex", prevIndex.toString())
+    } else {
+      // If no history, just go to previous quote in the current filtered list
+      const prevIndex = (index - 1 + quotes.length) % quotes.length
+      setIndex(prevIndex)
+      localStorage.setItem("lastQuoteIndex", prevIndex.toString())
+    }
+    
     setExplanation("")
     setShowExplanation(false)
-    localStorage.setItem("lastQuoteIndex", ((index - 1 + quotes.length) % quotes.length).toString())
   }
 
   const next = () => {
-    setIndex((index + 1) % quotes.length)
+    let nextIndex
+    
+    if (selectedCategory === "All" && !searchQuery) {
+      // For "All" category without search, choose a random quote from allQuotes
+      nextIndex = Math.floor(Math.random() * quotes.length)
+      
+      // Make sure we don't show the same quote
+      while (nextIndex === index && quotes.length > 1) {
+        nextIndex = Math.floor(Math.random() * quotes.length)
+      }
+    } else {
+      // For other categories or when searching, use sequential navigation
+      nextIndex = (index + 1) % quotes.length
+    }
+    
+    // Add the new index to our history
+    setPreviousIndices([...previousIndices, nextIndex])
+    setIndex(nextIndex)
     setExplanation("")
     setShowExplanation(false)
-    localStorage.setItem("lastQuoteIndex", ((index + 1) % quotes.length).toString())
+    localStorage.setItem("lastQuoteIndex", nextIndex.toString())
   }
 
   const explainQuote = async () => {
