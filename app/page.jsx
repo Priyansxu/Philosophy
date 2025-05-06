@@ -28,23 +28,15 @@ export default function QuotePage() {
 
   // Load saved quotes from localStorage
   useEffect(() => {
-    // Initialize dark mode first
     const savedDarkMode = localStorage.getItem("darkMode") === "true"
     setDarkMode(savedDarkMode)
     if (savedDarkMode) {
       document.documentElement.classList.add("dark")
     }
 
-    // Load saved quotes
     const savedQuotes = localStorage.getItem("savedQuotes")
     const savedList = savedQuotes ? JSON.parse(savedQuotes) : []
     setSaved(savedList)
-
-    // Check if we should preselect the Saved category
-    const lastSelectedCategory = localStorage.getItem("selectedCategory")
-    if (lastSelectedCategory) {
-      setSelectedCategory(lastSelectedCategory)
-    }
 
     // Fetch quotes data
     fetch("/quotes.json")
@@ -80,14 +72,11 @@ export default function QuotePage() {
       })
   }, [])
 
-  // Persist saved quotes to localStorage whenever they change
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem("savedQuotes", JSON.stringify(saved))
     }
   }, [saved, isLoaded])
-
-  // Save dark mode preference
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem("darkMode", darkMode)
@@ -99,14 +88,9 @@ export default function QuotePage() {
     }
   }, [darkMode, isLoaded])
 
-  // Save selected category
-  useEffect(() => {
-    if (isLoaded) {
-      localStorage.setItem("selectedCategory", selectedCategory)
-    }
-  }, [selectedCategory, isLoaded])
 
-  // Close dropdown on click outside
+
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -124,7 +108,7 @@ export default function QuotePage() {
     return `${quote.author}-${quote.text.substring(0, 20)}`
   }
 
-  // Filter quotes based on search query and selected category
+
   useEffect(() => {
     if (!isLoaded || allQuotes.length === 0) return;
 
@@ -309,7 +293,7 @@ export default function QuotePage() {
       </Head>
 
     <main className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? "dark bg-black text-neutral-200" : "bg-white text-gray-800"}`}>
-      <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black border-zinc-800" : "bg-white border-zinc-200"} border-b transition-colors duration-300`}>
+      <header className={`p-4 flex justify-between items-center ${darkMode ? "dark:bg-black" : "bg-white"} transition-colors duration-300`}>
         <div className="flex items-center gap-2" ref={dropdownRef}>
           <button
             onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
