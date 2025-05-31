@@ -465,7 +465,7 @@ export default function QuotePage() {
             </button>
           </div>
 
-          <div className="min-h-[120px] mb-12">
+          <div className="min-h-[120px] mb-16">
             <AnimatePresence>
               {showExplanation && explanation && (
                 <motion.div
