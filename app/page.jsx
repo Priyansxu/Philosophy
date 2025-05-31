@@ -13,7 +13,7 @@ export default function QuotePage() {
   const [quotes, setQuotes] = useState([])
   const [allQuotes, setAllQuotes] = useState([])
   const [index, setIndex] = useState(null)
-  const [previousIndices, setPreviousIndices] = useState([]) // Store previous indices for navigation
+  const [previousIndices, setPreviousIndices] = useState([]) 
   const [explanation, setExplanation] = useState("")
   const [isExplaining, setIsExplaining] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
@@ -27,7 +27,6 @@ export default function QuotePage() {
   const dropdownRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
 
-  // Load saved quotes from localStorage
   useEffect(() => {
     const savedDarkMode = localStorage.getItem("darkMode") === "true"
     setDarkMode(savedDarkMode)
@@ -39,7 +38,6 @@ export default function QuotePage() {
     const savedList = savedQuotes ? JSON.parse(savedQuotes) : []
     setSaved(savedList)
 
-    // Fetch quotes data
     fetch("/quotes.json")
       .then(res => res.json())
       .then(data => {
@@ -55,7 +53,6 @@ export default function QuotePage() {
 
         setAllQuotes(allQuotesData)
 
-        // Set initial quotes but wait for filters to be applied
         setQuotes(allQuotesData)
 
         const lastIndex = localStorage.getItem("lastQuoteIndex")
@@ -133,15 +130,14 @@ export default function QuotePage() {
     setQuotes(filtered)
     if (filtered.length > 0) {
       if (index !== null && index < filtered.length) {
-        // Keep current index
       } else {
         const newIndex = 0
         setIndex(newIndex)
-        setPreviousIndices([newIndex]) // Reset previous indices with new index
+        setPreviousIndices([newIndex])
       }
     } else {
       setIndex(null)
-      setPreviousIndices([]) // Reset previous indices when no quotes available
+      setPreviousIndices([])
     }
   }, [searchQuery, selectedCategory, allQuotes, saved, isLoaded, index])
 
@@ -150,7 +146,7 @@ export default function QuotePage() {
     setSearchQuery("")
     const randomIndex = Math.floor(Math.random() * allQuotes.length)
     setIndex(randomIndex)
-    setPreviousIndices([randomIndex]) // Reset previous indices with new random index
+    setPreviousIndices([randomIndex])
   }
 
   if (!isLoaded) {
@@ -208,16 +204,14 @@ export default function QuotePage() {
   const quote = quotes[index]
 
   const prev = () => {
-    // Get the previous index from our history
     if (previousIndices.length > 1) {
       const newPreviousIndices = [...previousIndices]
-      newPreviousIndices.pop() // Remove current index
+      newPreviousIndices.pop()
       const prevIndex = newPreviousIndices[newPreviousIndices.length - 1]
       setIndex(prevIndex)
       setPreviousIndices(newPreviousIndices)
       localStorage.setItem("lastQuoteIndex", prevIndex.toString())
     } else {
-      // If no history, just go to previous quote in the current filtered list
       const prevIndex = (index - 1 + quotes.length) % quotes.length
       setIndex(prevIndex)
       localStorage.setItem("lastQuoteIndex", prevIndex.toString())
@@ -426,7 +420,7 @@ export default function QuotePage() {
               onClick={toggleSave}
               className={`px-4 py-1.5 text-sm rounded-md border transition-colors inline-flex items-center gap-2 ${
                 isSaved()
-                  ? "bg-amber-100 border-amber-300 text-amber-700 hover:bg-amber-200"
+                  ? "bg-amber-100 border-amber-300 text-amber-700"
                   : darkMode
                     ? "bg-neutral-900 border-zinc-800 hover:bg-neutral-800 text-neutral-300"
                     : "bg-neutral-100 border-zinc-300 hover:bg-neutral-200"
