@@ -406,7 +406,7 @@ export default function QuotePage() {
       </AnimatePresence>
 
       <div className="flex-grow flex items-center justify-center p-4">
-        <div className="max-w-2xl w-full text-center px-4 space-y-4">
+        <div className="max-w-2xl w-full text-center px-4 space-y-4 pb-24">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -465,7 +465,7 @@ export default function QuotePage() {
             </button>
           </div>
 
-          <div className="min-h-[120px] mb-16">
+          <div className="min-h-[120px]">
             <AnimatePresence>
               {showExplanation && explanation && (
                 <motion.div
