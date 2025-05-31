@@ -485,7 +485,7 @@ export default function QuotePage() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-8 py-10 fixed bottom-1 w-full">
+      <div className="flex justify-center items-center gap-8 py-6 fixed bottom-1 w-full">
         <button
           onClick={prev}
           className={`flex items-center gap-2 px-5 py-2 border rounded-l-xl transition-colors ${
